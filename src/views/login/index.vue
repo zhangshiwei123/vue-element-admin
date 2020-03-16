@@ -1,9 +1,16 @@
 <template>
   <div class="login-container">
+    <div class="pos_logo">
+      <img src="../../assets/img_logo/login-logo.png" alt="">
+    </div>
+    <!-- <div class="title-container">
+      <lang-select class="set-language" />
+    </div> -->
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <img class="title" src="../../assets/img_logo/logo.png" alt="">
+        <!-- <h3 class="title">Login Form</h3> -->
       </div>
 
       <el-form-item prop="username">
@@ -49,12 +56,12 @@
 
       <div style="position:relative">
         <div class="tips">
-          <span>Username : admin</span>
-          <span>Password : any</span>
+          <span>用户名 : admin</span>
+          <span>密码 : any</span>
         </div>
         <div class="tips">
-          <span style="margin-right:18px;">Username : editor</span>
-          <span>Password : any</span>
+          <span style="margin-right:18px;">用户名 : editor</span>
+          <span>密码 : any</span>
         </div>
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
@@ -75,6 +82,7 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
+// import LangSelect from '@/components/LangSelect'
 import SocialSign from './components/SocialSignin'
 
 export default {
@@ -289,10 +297,9 @@ $light_gray:#eee;
 
   .title-container {
     position: relative;
-
+    display: flex;
+    justify-content: center;
     .title {
-      font-size: 26px;
-      color: $light_gray;
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
@@ -319,6 +326,15 @@ $light_gray:#eee;
     .thirdparty-button {
       display: none;
     }
+  }
+}
+.pos_logo {
+  position: fixed;
+  top: 20px;
+  right: -120px;
+  img {
+    width: 50%;
+    height: 50%;
   }
 }
 </style>
